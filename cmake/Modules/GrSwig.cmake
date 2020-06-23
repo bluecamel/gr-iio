@@ -157,7 +157,7 @@ macro(GR_SWIG_MAKE name)
     include(UseSWIG)
     SWIG_ADD_LIBRARY(${name}
       LANGUAGE python
-      SOURCE ${ifiles}
+      SOURCES ${ifiles}
     )
     SWIG_LINK_LIBRARIES(${name} ${PYTHON_LIBRARIES} ${GR_SWIG_LIBRARIES})
 
