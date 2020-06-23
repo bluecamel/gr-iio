@@ -155,7 +155,10 @@ macro(GR_SWIG_MAKE name)
 
     #setup the actual swig library target to be built
     include(UseSWIG)
-    SWIG_ADD_LIBRARY(${name} python ${ifiles})
+    SWIG_ADD_LIBRARY(${name}
+      LANGUAGE python
+      SOURCE ${ifiles}
+    )
     SWIG_LINK_LIBRARIES(${name} ${PYTHON_LIBRARIES} ${GR_SWIG_LIBRARIES})
 
 endmacro(GR_SWIG_MAKE)
